@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(data => {
-                contacts = _.sortBy(data, 'id').reverse(); // Sort by id and then reverse to get the latest first
+                contacts = _.sortBy(data, 'id').reverse(); 
                 displayContacts(contacts);
                 var endTime = performance.now();
                 console.log('Fetch contacts response time:', endTime - startTime, 'milliseconds');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             contactsContainer.insertAdjacentHTML('beforeend', contactHtml);
         });
 
-        // Clear input fields after displaying contacts
+       
         document.getElementById('name').value = '';
         document.getElementById('email').value = '';
     }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Updating contact...');
         var startTime = performance.now();
 
-        var contactToUpdate = _.find(contacts, { id: parseInt(contactId) }); // Ensure contactId is parsed as integer
+        var contactToUpdate = _.find(contacts, { id: parseInt(contactId) }); 
 
         if (contactToUpdate) {
             console.log('Contact to update:', contactToUpdate);
