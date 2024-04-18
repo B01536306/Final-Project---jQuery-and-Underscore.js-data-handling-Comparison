@@ -8,8 +8,6 @@ const port = 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
-
-// Sample data for contacts
 let contacts = require('./contacts.json');
 
 // Get contacts endpoint
@@ -65,7 +63,6 @@ app.delete('/api/contacts/:id', (req, res) => {
     }
 });
 
-// Serve static files (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, '')));
 
 app.listen(port, () => {
