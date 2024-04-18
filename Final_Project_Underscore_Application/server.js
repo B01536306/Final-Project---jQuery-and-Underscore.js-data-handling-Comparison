@@ -9,7 +9,7 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Sample data for contacts
+
 let contacts = require('./contacts.json');
 
 // Get contacts endpoint
@@ -42,7 +42,7 @@ app.put('/api/contacts/:id', (req, res) => {
     const updatedContactIndex = contacts.findIndex(contact => contact.id === contactId);
     
     if (updatedContactIndex !== -1) {
-        // Update the contact
+    
         contacts[updatedContactIndex] = {
             id: contactId,
             name: updatedData.name,
@@ -70,7 +70,7 @@ app.delete('/api/contacts/:id', (req, res) => {
     }
 });
 
-// Serve static files (HTML, CSS, JS)
+
 app.use(express.static(path.join(__dirname, '')));
 
 app.listen(port, () => {
